@@ -1,10 +1,10 @@
-#####TOUR-API
+# TOUR-API
 
-###Tech Stack
+### Tech Stack
 
-##Backend-
+##### Backend-
 
-# MVC
-# Node.js
-# MongoDb
-# Express.js
+##### MVC
+##### Node.js
+##### MongoDb
+##### Express.js
