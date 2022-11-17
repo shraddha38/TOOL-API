@@ -121,3 +121,20 @@ exports.createTour = async (req, res) => {
         }
     })
 }
+
+
+exports.getTourStats= async (req,res)=>{
+
+    try{
+        const stats= Tour.aggregate([
+  
+        ])
+
+    }   catch (err) {
+        res.status(404).json({
+            status: "Page Not Found",
+            message: err,
+            requestedAt: req.requestTime,
+        })
+    }
+}
