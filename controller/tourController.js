@@ -1,5 +1,12 @@
 const Tour = require("../model/tourModel")
 
+
+exports.aliasTopTour = (req, res, next) => {
+    req.query.limit = '5';
+    req.query.sort = "-ratingsAverage,price",
+        req.query.fields = 'name,price,ratingAverage,summary,difficulty';
+    next();
+}
 exports.getAllTours = async (req, res) => {
 
     const queryObj = { ...req.query };
@@ -45,7 +52,7 @@ exports.getAllTours = async (req, res) => {
             const numTours = await Tour.countDocuments();
             if (skip >= numTours) throw new Error("Page not found error");
         }
-        
+
         res.status(200).json({
             status: "success",
             requestedAt: req.requestTime,
