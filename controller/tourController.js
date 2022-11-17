@@ -13,7 +13,7 @@ exports.getAllTours = async (req, res) => {
     })
 }
 exports.getTour = async (req, res) => {
-    const tours = await Tour.find({_id: req.params.id});
+    const tours = await Tour.find({ _id: req.params.id });
     res.status(200).json({
         status: "success",
         requestedAt: req.requestTime,
@@ -49,7 +49,6 @@ exports.deleteTour = async (req, res) => {
         }
     })
 }
-
 
 exports.createTour = async (req, res) => {
     console.log(req.body, "body")
