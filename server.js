@@ -16,3 +16,10 @@ app.use("/", tourRouter);
 app.listen(3000, () => {
     console.log("listening at 3000");
 });
+
+app.all('*', (req, res, next) => {
+    res.status(404).json({
+        status: "fail",
+        message: `Cant find ${req.originalUrl} on this server`
+    })
+})
