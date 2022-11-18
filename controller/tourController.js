@@ -15,7 +15,6 @@ exports.getAllTours = async (req, res) => {
     excludeFields.forEach(el => delete queryObj[el])
 
     //make a query
-    // object to string
     let queryString = JSON.stringify(queryObj)
     queryString = queryString.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`)
     console.log(queryObj, JSON.parse(queryString))
@@ -38,7 +37,7 @@ exports.getAllTours = async (req, res) => {
     }
 
     // Pagination
-    //page=2&limit=10
+    
     const page = req.query.page * 1 || 1;
     const limit = req.query.limit * 1 || 1;
     const skip = (page - 1) * limit;
@@ -60,7 +59,6 @@ exports.getAllTours = async (req, res) => {
             data: {
                 tours
             }
-
         })
     }
     catch (err) {
